@@ -1,2 +1,2 @@
 [diff]
-  tool = odiff
+  tool = lodiff

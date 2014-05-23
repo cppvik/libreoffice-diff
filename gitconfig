@@ -1,5 +1,5 @@
-[difftool "odiff"]
-        cmd = "/usr/bin/pyoffice.py \"$LOCAL\" \"`pwd`/$REMOTE\""
-[diff "odt"]
+[difftool "lodiff"]
+        cmd = "/usr/bin/lodiff.py \"$LOCAL\" \"`pwd`/$REMOTE\""
+[diff "odf"]
     binary = true
-    textconv = /usr/bin/odt-to-txt
+    textconv = /usr/bin/odf-to-txt
