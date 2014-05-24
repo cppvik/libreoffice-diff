@@ -7,3 +7,4 @@ sudo chmod +x+x+x /usr/bin/lodiff.py
 sudo chmod +x+x+x /usr/bin/startlo.sh
 sudo chmod +x+x+x /usr/bin/odf-to-txt
 cat gitconfig >> ~/.gitconfig
+echo "LibreOffice-difftool successfully installed!"
