@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
+# Install libreoffice-difftool
 
-sudo cp startlo.sh /usr/bin/startlo.sh
-sudo cp lodiff.py /usr/bin/lodiff.py
-sudo cp  odf-to-txt /usr/bin/odf-to-txt
-sudo chmod +x+x+x /usr/bin/lodiff.py
-sudo chmod +x+x+x /usr/bin/startlo.sh
-sudo chmod +x+x+x /usr/bin/odf-to-txt
-cat gitconfig >> ~/.gitconfig
+set -e
+
+DIR=$1
+if [ -z "$DIR" ]; then
+    echo Usage: installer.sh DIRECTORY
+    exit 1
+fi
+cp startlo.sh lodiff.py lodiff-config-repo.sh $DIR
+
+git config --global difftool.lodiff.cmd "lodiff.py \$LOCAL \$REMOTE"
+git config --global diff.odf binary true
+git config --global diff.odf textconf odt2txt
+
 echo "LibreOffice-difftool successfully installed!"
