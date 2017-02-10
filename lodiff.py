@@ -12,7 +12,7 @@ from com.sun.star.beans.PropertyState import DIRECT_VALUE
 # launching libreoffice
 newpid = os.fork()
 if newpid == 0:
-	os.system("/usr/bin/startlo.sh")
+	os.system("startlo.sh")
 	sys.exit()
 sleep(1)
 
