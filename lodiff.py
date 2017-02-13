@@ -12,7 +12,7 @@ from com.sun.star.beans.PropertyState import DIRECT_VALUE
 # launching libreoffice
 newpid = os.fork()
 if newpid == 0:
-	os.system("/usr/bin/startlo.sh")
+	os.system("startlo.sh")
 	sys.exit()
 sleep(1)
 
@@ -22,8 +22,8 @@ resolver = local.ServiceManager.createInstanceWithContext("com.sun.star.bridge.U
 context = resolver.resolve("uno:socket,host=localhost,port=2002;urp;StarOffice.ComponentContext")
 desktop = context.ServiceManager.createInstanceWithContext("com.sun.star.frame.Desktop", context)
 
-url1 = "file://" + str(sys.argv[1])
-url2 = "file://" + str(sys.argv[2])
+url1 = "file://" + str(os.path.abspath(sys.argv[1]))
+url2 = "file://" + str(os.path.abspath(sys.argv[2]))
 
 #print ("First argument: %s" % str(sys.argv[1]))
 #print ("Second argument: %s" % str(sys.argv[2]))

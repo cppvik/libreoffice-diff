@@ -1,5 +1,0 @@
-[difftool "lodiff"]
-        cmd = "/usr/bin/lodiff.py \"$LOCAL\" \"`pwd`/$REMOTE\""
-[diff "odf"]
-    binary = true
-    textconv = /usr/bin/odf-to-txt
